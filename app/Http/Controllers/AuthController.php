@@ -13,7 +13,7 @@ class AuthController extends Controller
 {
     public function register()
     {
-        if (!Auth::check()) {
+        if (Auth::check()) {
             return redirect()->route('login');
         }
         return view('auth/register');
